@@ -47,17 +47,23 @@ Tachyon caches working set files in memory, and enables different jobs/queries a
 
 <p>Tachyon has an API similar to JAVA file, providing <a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html">OutputStream</a> interface, and efficient support for memory mapped I/O.</p>
 
-<h3>Generic Filesystem Interface</h3>
+<h3>Compatibility</h3>
+<p>Hadoop MapReduce and Spark can run with Tachyon without any modifications.</p>
 
-<p>Tachyon v0.2.0 introduces a simple interface that allows for clean and easy compatibility with an underlying filesystem. Native support for both HDFS and a single node local filesystem is included in this release.</p>
+<h3>Native support for raw tables</h3>
+<p>Table data with hundreds or more columns is common in data warehouses. Tachyon provides native support for multi-columned data.
+The user can choose only to put often queried columns in memory.</p>
 
-<h3>Improved Utilities</h3>
+<h3>Pluggable underlayer file system</h3>
+<p>Tachyon checkpoints in memory data into the underlayer file system. Tachyon has a generic interface to make plugging in an underlayer file system easy.
+Tachyon now supports HDFS, and single node local file system.</p>
 
-<p>A web interface and command line support are included in the v0.2.0 release. The web interface allows users to easily monitor the status of their cluster and see information such as which files are cached. Command line operations such as creating/deleting folders and copying from and to local are also available.</p>
+<h3>Enhanced UI</h3>
+<p>The new web UI is more user friendly. User can browse the file system easily. With debug mode, admins can also view detailed information of each file, including locations, checkpoint path, etc.</p>
 
-<h3>Simple Deployment</h3>
-
-<p>The deployment process for Tachyon is now much more straight forward. You can get a local cluster running in just a few minutes!</p>
+<h3>Command line interaction</h3>
+<p>Users can use ./bin/tachyon tfs to interact with the file system.
+It is simple to copy data in and out of the file system.</p>
 
 <h2>Authors and Contributors</h2>
 <p>Tachyon is developed in the <a href="http://amplab.cs.berkeley.edu/">UC Berkeley AMP Lab</a>.
