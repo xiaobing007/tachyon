@@ -42,6 +42,9 @@ Tachyon caches working set files in memory, and enables different jobs/queries a
 <h3>Java-like File API</h3>
 <p>Tachyon has an API similar to JAVA file, providing <a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html">OutputStream</a> interface, and efficient support for memory mapped I/O.</p>
 
+<h3>Compatibility</h3>
+<p>Hadoop MapReduce and Spark can run with Tachyon without any modification.</p>
+
 <h3>Native support for raw table</h3>
 <p>Table data with hundreds or more columns is common in data warehouses. Tachyon provides native support for multi-columned data.
 The user can choose only to put often queried columns in memory.</p>
