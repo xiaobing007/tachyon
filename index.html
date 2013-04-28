@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Tachyon - File System Provides File Sharing at Memory-Speed Across Cluster Frameworks</title>
-
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -16,84 +15,68 @@
     <div class="wrapper">
       <header>
         <h1>Tachyon</h1>
-
         <p class="view"><a href="https://github.com/amplab/tachyon">View the Project on GitHub <small>amplab/tachyon</small></a></p>
         <p class="view"><a href="https://github.com/amplab/tachyon/wiki">Documentation</a></p>
-        <p class="view"><a href="https://github.com/amplab/tachyon/wiki/Tachyon-Release-0.2.0">Tachyon 0.2.0 Release</a></p>
+        <p class="view"><a href="https://github.com/amplab/tachyon/wiki/Tachyon-Release-0.2">Tachyon 0.2.1 Release</a></p>
         <p class="view"><a href="https://groups.google.com/forum/?fromgroups#!forum/tachyon-users">Mailing List</a></p>
       </header>
       <section>
+        <h2>Tachyon</h2>
+        <p>Tachyon is a fault tolerant distributed file system enabling reliable file sharing at memory-speed across cluster frameworks, such as Spark and MapReduce. It achieves its high performance by leveraging lineage information and using memory aggressively. Tachyon caches working set files in memory, and enables different jobs/queries and frameworks to access cached files at memory speed. Thus, Tachyon avoids going to disk to load datasets that are frequently read.
+        </p>
 
-<h2>Tachyon</h2>
+        <p> On April 10th, 2013, we put out a <em>soft</em> release of <a href="https://github.com/amplab/tachyon/wiki/Tachyon-Release-0.2">Tachyon 0.2.0</a> Alpha. The new version is more stable and also features significant performance improvements. It is, however, a soft release and we are working full time towards a full <em>hard</em> release that contains a stable version of the features that we expect will be core to Tachyon. Stay tuned.
+        </p>
 
-<p>Tachyon is a fault tolerant distributed ﬁle system enabling reliable file sharing at memory-speed across cluster frameworks, such as Spark and MapReduce.It offers up to 300 times higher throughput than HDFS, by leveraging lineage information and using memory aggressively.
+        <h2>Getting Started</h2>
+        <p>Check out the <a href="https://github.com/amplab/tachyon/wiki/Running-Tachyon-Locally">quick start tutorial</a> to get Tachyon running locally in a few minutes.
+        </p>
 
-Tachyon caches working set files in memory, and enables different jobs/queries and frameworks to access cached files at memory speed. Thus, Tachyon avoids going to disk to load datasets that is frequently read.
+        <h2>Features of v0.2.x: </h2>
 
-</p>
+        <h3>Java-like File API</h3>
 
-    <p>We released
-      <a href="https://github.com/amplab/tachyon/wiki/Tachyon-Release-0.2.0">Tachyon 0.2.0</a> on April 10th, 2013.
-      The new version is much more stable and also features significant performance improvements.
-    </p>
+        <p>Tachyon has an API similar to JAVA file, providing <a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html">OutputStream</a> interface, and efficient support for memory mapped I/O.</p>
 
-<h2>Getting Started</h2>
+        <h3>Compatibility</h3>
+        <p>Hadoop MapReduce and Spark can run with Tachyon without any modification. However, close integration is required to take full advantage of Tachyon.</p>
 
-<p>Check out the <a href="https://github.com/amplab/tachyon/wiki/Building-Tachyon-from-Source-Code">quick start tutorial</a> to get Tachyon running locally in a few minutes.</p>
+        <h3>Native support for raw tables</h3>
+        <p>Table data with hundreds or more columns is common in data warehouses. Tachyon provides native support for multi-columned data. The user can choose to only put hot columns in memory.</p>
 
-<h2>Features of v0.2.0</h2>
+        <h3>Pluggable underlayer file system</h3>
+        <p>Tachyon checkpoints in memory data into the underlayer file system. Tachyon has a generic interface to make plugging in an underlayer file system easy.Tachyon now supports HDFS, and single node local file system.</p>
 
-<h3>Java-like File API</h3>
+        <h3>Enhanced UI</h3>
+        <p>The new web UI is more user friendly. User can browse the file system easily. With debug mode, admins can also view detailed information of each file, including locations, checkpoint path, etc.</p>
 
-<p>Tachyon has an API similar to JAVA file, providing <a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html">OutputStream</a> interface, and efficient support for memory mapped I/O.</p>
+        <h3>Command line interaction</h3>
+        <p>Users can use ./bin/tachyon tfs to interact with the file system. It is simple to copy data in and out of the file system.</p>
 
-<h3>Compatibility</h3>
-<p>Hadoop MapReduce and Spark can run with Tachyon without any modifications.</p>
+        <h2>Support or Contact</h2>
+        <p>You can learn more about Tachyon from our <a href="https://github.com/amplab/tachyon/wiki">wiki</a>, start it on you local machine in a few minutes (<a href="https://github.com/amplab/tachyon/wiki/Running-Tachyon-Locally">run Tachyon locally</a>), or build it and become a Tachyon contributor (<a href="https://github.com/amplab/tachyon/wiki/Building-Tachyon-from-Source-Code">contribute to Tachyon</a>).
+        </p>
+        <p>You are also welcome to join our <a href="https://groups.google.com/forum/?fromgroups#!forum/tachyon-users">mailing list</a> to discuss questions and make suggestions.
+        </p>
 
-<h3>Native support for raw tables</h3>
-<p>Table data with hundreds or more columns is common in data warehouses. Tachyon provides native support for multi-columned data.
-The user can choose only to put often queried columns in memory.</p>
-
-<h3>Pluggable underlayer file system</h3>
-<p>Tachyon checkpoints in memory data into the underlayer file system. Tachyon has a generic interface to make plugging in an underlayer file system easy.
-Tachyon now supports HDFS, and single node local file system.</p>
-
-<h3>Enhanced UI</h3>
-<p>The new web UI is more user friendly. User can browse the file system easily. With debug mode, admins can also view detailed information of each file, including locations, checkpoint path, etc.</p>
-
-<h3>Command line interaction</h3>
-<p>Users can use ./bin/tachyon tfs to interact with the file system.
-It is simple to copy data in and out of the file system.</p>
-
-<h2>Authors and Contributors</h2>
-<p>Tachyon is developed in the <a href="http://amplab.cs.berkeley.edu/">UC Berkeley AMP Lab</a>.
-The research and development is supported in part by an NSF CISE Expeditions award,  gifts
-from Google, SAP, Amazon Web Services, Blue Goji, Cisco, Cloudera, Ericsson, General Electric,
-Hewlett Packard, Huawei, Intel, MarkLogic, Microsoft, NetApp, Oracle, Quanta, Splunk, VMware
-and by DARPA (contract #FA8650-11-C-7136).</p>
-
-<h2>Support or Contact</h2>
-
-<p>Join our <a href="https://groups.google.com/forum/?fromgroups#!forum/tachyon-users">mailing list</a> to discuss questions and suggestions.
-If you are interested in trying out Tachyon in your cluster, please contact <a href="mailto:haoyuan@cs.berkeley.edu">Haoyuan</a>.</p>
-
-</section>
+        <h2>Authors and Contributors</h2>
+        <p>Tachyon is developed in the <a href="http://amplab.cs.berkeley.edu/">UC Berkeley AMP Lab</a>. The research and development is supported in part by an NSF CISE Expeditions award,  gifts from Google, SAP, Amazon Web Services, Blue Goji, Cisco, Cloudera, Ericsson, General Electric, Hewlett Packard, Huawei, Intel, MarkLogic, Microsoft, NetApp, Oracle, Quanta, Splunk, VMware and by DARPA (contract #FA8650-11-C-7136).</p>
+      </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/amplab">amplab</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme based on <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-39977255-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-39977255-1");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
   </body>
 </html>
