@@ -19,13 +19,14 @@
         <p class="view"><a href="https://github.com/amplab/tachyon/wiki">Documentation</a></p>
         <p class="view"><a href="https://github.com/amplab/tachyon/wiki/Tachyon-Release-0.2">Tachyon 0.2.1 Release</a></p>
         <p class="view"><a href="https://groups.google.com/forum/?fromgroups#!forum/tachyon-users">Mailing List</a></p>
+        <p class="view"><a href='https://amplab.cs.berkeley.edu/jenkins/job/Tachyon-Hadoop1/'>Master Branch <img src='https://amplab.cs.berkeley.edu/jenkins/job/Tachyon-Hadoop1/badge/icon'></a></p>
       </header>
       <section>
         <h2>Tachyon</h2>
         <p>Tachyon is a fault tolerant distributed file system enabling reliable file sharing at memory-speed across cluster frameworks, such as Spark and MapReduce. It achieves its high performance by leveraging lineage information and using memory aggressively. Tachyon caches working set files in memory, and enables different jobs/queries and frameworks to access cached files at memory speed. Thus, Tachyon avoids going to disk to load datasets that are frequently read.
         </p>
 
-        <p> On April 10th, 2013, we put out a <em>soft</em> release of <a href="https://github.com/amplab/tachyon/wiki/Tachyon-Release-0.2">Tachyon 0.2.0</a> Alpha. The new version is more stable and also features significant performance improvements. It is, however, a soft release and we are working full time towards a full <em>hard</em> release that contains a stable version of the features that we expect will be core to Tachyon. Stay tuned.
+        <p> On April 10th, 2013, we put out a <em>soft</em> release of <a href="https://github.com/amplab/tachyon/wiki/Tachyon-Release-0.2">Tachyon 0.2.0</a> Alpha. The new version is more stable and also features performance improvements. It is, however, a soft release and we are working full time towards a full <em>hard</em> release that contains a stable version of the features that we expect will be core to Tachyon. Stay tuned.
         </p>
 
         <h2>Getting Started</h2>
@@ -36,10 +37,10 @@
 
         <h3>Java-like File API</h3>
 
-        <p>Tachyon has an API similar to JAVA file, providing <a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html">OutputStream</a> interface, and efficient support for memory mapped I/O.</p>
+        <p>Tachyon's native API is similar to JAVA file, providing <a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html">InputStream</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/io/OutputStream.html">OutputStream</a> interface, and efficient support for memory mapped I/O. Using this API would get best performance from Tachyon</p>
 
         <h3>Compatibility</h3>
-        <p>Hadoop MapReduce and Spark can run with Tachyon without any modification. However, close integration is required to take full advantage of Tachyon.</p>
+        <p>Tachyon also implemented Hadoop FileSystem interface, therefore, Hadoop MapReduce and Spark can run with Tachyon without any modification. However, close integration is required to fully take advantage of Tachyon and we are working towards that. End-to-end latency speedup depends on the workload and the framework, since various frameworks have different execution overhead.</p>
 
         <h3>Native support for raw tables</h3>
         <p>Table data with hundreds or more columns is common in data warehouses. Tachyon provides native support for multi-columned data. The user can choose to only put hot columns in memory.</p>
@@ -56,7 +57,7 @@
         <h2>Support or Contact</h2>
         <p>You can learn more about Tachyon from our <a href="https://github.com/amplab/tachyon/wiki">wiki</a>, start it on you local machine in a few minutes (<a href="https://github.com/amplab/tachyon/wiki/Running-Tachyon-Locally">run Tachyon locally</a>), or build it and become a Tachyon contributor (<a href="https://github.com/amplab/tachyon/wiki/Building-Tachyon-from-Source-Code">contribute to Tachyon</a>).
         </p>
-        <p>You are also welcome to join our <a href="https://groups.google.com/forum/?fromgroups#!forum/tachyon-users">mailing list</a> to discuss questions and make suggestions.
+        <p>You are also welcome to join our <a href="https://groups.google.com/forum/?fromgroups#!forum/tachyon-users">mailing list</a> to discuss questions and make suggestions. If you are interested in trying out Tachyon in your cluster, please contact <a href="mailto:haoyuan@cs.berkeley.edu">Haoyuan</a>.
         </p>
 
         <h2>Authors and Contributors</h2>
